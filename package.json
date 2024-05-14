@@ -1,0 +1,22 @@
+{
+  "name": "se-core",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "scripts": {
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\"",
+    "build": "npx tsc",
+    "start": "node ./dist/index.js"
+  },
+  "author": "juxi16",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.5.3",
+    "dotenv": "^16.3.1",
+    "typescript": "^5.1.6"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.1",
+    "nodemon": "^3.0.1"
+  }
+}
