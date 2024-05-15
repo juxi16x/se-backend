@@ -66,7 +66,10 @@ const server = http.createServer((req, res) => {
 
     if (url == "/") {
       try {
-        require("./routes/index")(FormatReq, FormatRes);
+        if (req.method == "GET")
+          require("./routes/index").get(FormatReq, FormatRes);
+        else
+          require("./routes/index").post(FormatReq, FormatRes);
       } catch (error) {
         fs.readFile("./static/index.html").then(content => {
           res.end(content);
